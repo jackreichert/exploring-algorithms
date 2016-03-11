@@ -13,8 +13,6 @@ def insertionSort(A):
         A[i+1] = key
     return A
 
-
-
 def main():
     arr = [5,2,4,6,1,3]
     print("Before: {}".format(arr))

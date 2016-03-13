@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 '''
 Selection sort: find lowest value, put in A[0] etc.
 '''

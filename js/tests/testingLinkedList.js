@@ -25,6 +25,12 @@ QUnit.test("Add value once, searchValueAt(0) returns value", function (assert) {
   assert.ok(5 === linkedList.searchValueAt(0), 'Passed!');
 });
 
+QUnit.test("Add value once, searchValueAt(1) returns null", function (assert) {
+  var linkedList = new LinkedList();
+  linkedList.add(5);
+  assert.ok(null === linkedList.searchValueAt(1), 'Passed!');
+});
+
 QUnit.test("Add two values, getLength is 2", function (assert) {
   var linkedList = new LinkedList();
   linkedList.add(5);
@@ -46,6 +52,12 @@ QUnit.test("Add two values, searchValueAt(0) returns first value", function (ass
   assert.ok(5 === linkedList.searchValueAt(0), 'Passed!');
 });
 
+QUnit.test("Remove node on empty list, length is 0", function (assert) {
+  var linkedList = new LinkedList();
+  linkedList.removeNodeAt(0);
+  assert.ok(0 === linkedList.getLength(), 'Passed!');
+});
+
 QUnit.test("Add value, remove node, length is 0", function (assert) {
   var linkedList = new LinkedList();
   linkedList.add(5);
@@ -60,12 +72,28 @@ QUnit.test("Add value, remove node, list is empty", function (assert) {
   assert.ok(null === linkedList.searchValueAt(0), 'Passed!');
 });
 
+QUnit.test("Add value, remove node, add value, first is second value", function (assert) {
+  var linkedList = new LinkedList();
+  linkedList.add(5);
+  linkedList.removeNodeAt(0);
+  linkedList.add(8);
+  assert.ok(8 === linkedList.searchValueAt(0), 'Passed!');
+});
+
 QUnit.test("Add two values, remove second, length is 1", function (assert) {
   var linkedList = new LinkedList();
   linkedList.add(5);
   linkedList.add(8);
   linkedList.removeNodeAt(1);
   assert.ok(1 === linkedList.getLength(), 'Passed!');
+});
+
+QUnit.test("Add two values, remove at third position, length is 2", function (assert) {
+  var linkedList = new LinkedList();
+  linkedList.add(5);
+  linkedList.add(8);
+  linkedList.removeNodeAt(2);
+  assert.ok(2 === linkedList.getLength(), 'Passed!');
 });
 
 QUnit.test("Add two values, remove second, first is value and next is empty", function (assert) {

@@ -37,6 +37,7 @@ class LinkedList {
       current = current.next;
       i++;
     }
+    
     return current;
   }
 
@@ -44,8 +45,8 @@ class LinkedList {
     return this.searchNodeAt(position).value;
   }
 
-  getNodeAfterNext(node){
-    return node.next.next;
+  isNode(node){
+    return null !== node.value || null !== node.next;
   }
 
   removeNodeAt(position){
@@ -53,10 +54,18 @@ class LinkedList {
       this.head = this.head.next;
     } else {
       var nodeBeforePositionToDelete = this.searchNodeAt(position-1),
-      nodeAfterPositionToDelete = this.getNodeAfterNext(nodeBeforePositionToDelete);
+      nodeToDelete = nodeBeforePositionToDelete.next,
+      nodeAfterPositionToDelete = nodeToDelete.next;
+      if (!this.isNode(nodeToDelete)){
+        return;
+      }
       nodeBeforePositionToDelete.next = nodeAfterPositionToDelete;
     }
-    this._length--;
+
+    if (0 < this._length) {
+      this._length--;
+    }
+
   }
 
 };

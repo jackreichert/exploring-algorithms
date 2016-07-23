@@ -18,14 +18,26 @@ class Stack {
   }
 
   pop() {
-    if ( 0 === this.getSize() ) {
+    if ( this.isEmpty() ) {
       throw new Error("StackUnderflow");
     }
 
     return this.content.splice(this.content.length - 1, 1)[0];
   }
 
-  peek() {
-    return this.content[this.content.length - 1 ];
+  top() {
+    if (this.isEmpty()){
+      throw new Error("Empty");
+    }
+    return this.content[this.content.length - 1];
+  }
+
+  find(value){
+    for( var i = this.getSize() - 1; i >= 0; i-- ){
+      if( value ===  this.content[i]){
+        return (this.getSize()-1)-i;
+      }
+    }
+    return null;
   }
 }

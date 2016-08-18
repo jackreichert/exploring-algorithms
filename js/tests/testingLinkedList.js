@@ -1,3 +1,5 @@
+'use strict';
+
 QUnit.test("New linked list init", function (assert) {
   var linkedList = new LinkedList();
   assert.ok(undefined !== linkedList, 'Passed!');

@@ -1,3 +1,4 @@
+'use strict';
 QUnit.test( "Can create Stack object", function( assert ) {
   var stack = new Stack();
   assert.ok( 'Stack' === stack.constructor.name, "Passed!" );

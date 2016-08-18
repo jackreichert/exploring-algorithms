@@ -1,3 +1,5 @@
+'use strict';
+
 class LinkedList {
   constructor() {
     this._length = 0;
@@ -37,7 +39,7 @@ class LinkedList {
       current = current.next;
       i++;
     }
-    
+
     return current;
   }
 

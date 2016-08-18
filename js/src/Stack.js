@@ -1,4 +1,4 @@
-/** The Stack Kata **/
+'use strict';
 
 class Stack {
   constructor() {

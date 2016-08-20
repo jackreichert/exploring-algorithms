@@ -21,7 +21,7 @@ QUnit.test("When 3 is given to 2,7,4, insertIntoPlace returns 2,3,7,4", function
   assert.ok('2,3,7,4' === insertionSort.insertIntoPlace(3, [2,7,4]).toString());
 });
 
-QUnit.test("When 3,2,5,4,7,4 is given, returns 2,3,4,4,5,7", function (assert) {
+QUnit.test("When 3,2,5,4,7,4 is given, sort returns 2,3,4,4,5,7", function (assert) {
   var insertionSort = new InsertionSort();
   assert.ok('2,3,4,4,5,7' === insertionSort.sort([3,2,5,4,7,4]).toString());
 });

@@ -1,11 +1,13 @@
 'use strict';
 class InsertionSort {
   sort(arr){
-    var newArr = [];
     for(var i = 0; i < arr.length; i++){
-      newArr = this.insertIntoPlace(arr[i], newArr);
+      var val = arr[i],
+      newPos = this.getPositionForNewVal(val, arr);
+      arr.splice(i,1);
+      arr.splice(newPos,0,val);
     }
-    return newArr;
+    return arr;
   }
 
   insertIntoPlace(val, arr){
@@ -17,5 +19,14 @@ class InsertionSort {
     }
     arr.push(val);
     return arr;
+  }
+
+  getPositionForNewVal(val, arr){
+    for( var i = 0; i < arr.length; i++ ){
+      if (val <= arr[i]){
+        return i;
+      }
+    }
+    return i;
   }
 }

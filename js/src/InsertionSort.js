@@ -1,6 +1,14 @@
 'use strict';
 class InsertionSort {
-  insertIntoPlace(arr, val){
+  sort(arr){
+    var newArr = [];
+    for(var i = 0; i < arr.length; i++){
+      newArr = this.insertIntoPlace(arr[i], newArr);
+    }
+    return newArr;
+  }
+
+  insertIntoPlace(val, arr){
     for( var i = 0; i < arr.length; i++ ){
       if (val < arr[i]){
         arr.splice(i,0,val);

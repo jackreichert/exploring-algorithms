@@ -4,8 +4,10 @@ class InsertionSort {
     for(var i = 0; i < arr.length; i++){
       var val = arr[i],
       newPos = this.getPositionForNewVal(val, arr);
-      arr.splice(i,1);
-      arr.splice(newPos,0,val);
+      if ( i !== newPos ) {
+        arr.splice(i,1);
+        arr.splice(newPos,0,val);
+      }
     }
     return arr;
   }

@@ -13,10 +13,13 @@ class InsertionSort:
     def insertAt(self,val,index,list):
         return list[:index] + [val] + list[index:]
 
+    def slice(self,list,index,amount):
+        return list[:index] + list[index+amount:]
+
     def sort(self,list):
-        newlist = []
         for i,num in enumerate(list):
             if i < (len(list)):
-                newPos = self.getPositionForNewVal(num,newlist)
-                newlist = self.insertAt(num,newPos,newlist)
-        return newlist
+                newPos = self.getPositionForNewVal(num,list[:i])
+                list = self.slice(list,i,1)
+                list = self.insertAt(num,newPos,list)
+        return list

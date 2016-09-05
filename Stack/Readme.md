@@ -1,6 +1,6 @@
-# Queue
+# Stack
 
-- [Wikipedia](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+- [Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 - [Stack kata, Jack's notes](https://www.jackreichert.com/2016/07/code-katas-stack/)
 
 ## Tests

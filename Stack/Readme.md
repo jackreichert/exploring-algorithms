@@ -12,13 +12,14 @@
 5. When pushed passed limit, stack overflows
 6. When popped passed limit, stack underflows
 7. When two values are pushed then one is popped, size is one
-8. When one and two are pushed two and one are popped
-9. When creating stack with negative size, should throw IllegalCapacity
-10. When Creating stack with zero capacity, any push should overflow
-11. When one is pushed, one is on top
-12. When stack is empty, top throws empty
-13. With zero capacity stack, top throws empty
-14. Given stack with one two pushed, find one and two
-15. Given a stack with no two, find two returns null
+8. When 1 is pushed 1 is popped
+9. When 1 and 2 are pushed 2 and 1 are popped
+10. When creating stack with negative size, should throw IllegalCapacity
+11. When Creating stack with zero capacity, any push should overflow
+12. When one is pushed, one is on top
+13. When stack is empty, top throws empty
+14. With zero capacity stack, top throws empty
+15. Given stack with one two pushed, find one and two
+16. Given a stack with no two, find two returns null
 
 [Inspired by CleanCoders.com Eps. 4 extras](https://cleancoders.com/videos#clean-code-episode-4.

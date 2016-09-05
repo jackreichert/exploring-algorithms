@@ -11,11 +11,12 @@
 5. When enqueued passed limit, queue overflows
 6. When dequeued passed limit, queue underflows
 7. When two values are enqueued then one is dequeued, size is one
-9. When one and two are enqueued one and two are dequeued
+8. When 1 is enqueued 1 is dequeued
+9. When 1 and 2 are enqueued 1 and 2 are dequeued
 10. When creating queue with negative size, should throw IllegalCapacity
 11. When Creating queue with zero capacity, any enqueue should overflow
-12. When one is enqueued, one is on top
+12. When 1 is enqueued, 1 is on top
 13. When queue is empty, top throws empty
 14. With zero capacity queue, top throws empty
-15. Given queue with one two enqueued, find one and two
-16. Given a queue with no two, find two returns null
+15. Given queue with 1 2 enqueued, find 1 and 2
+16. Given a queue with no 2, find(2) returns null

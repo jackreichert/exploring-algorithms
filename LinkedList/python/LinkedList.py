@@ -1,17 +1,17 @@
 #!/usr/local/bin/python3
 
-class Node:
-    def __init__(self, value=None, next=None):
-        self.value = value
-        self.next = next
-
-    def __str__(self):
-        return str(self.value)
-
 class LinkedList:
     def __init__(self):
-        self.head = Node()
+        self.head = self.Node()
         self.size = 0
+
+    class Node:
+        def __init__(self, value=None, next=None):
+            self.value = value
+            self.next = next
+
+        def __str__(self):
+            return str(self.value)
 
     def isEmpty(self):
         return 0 == self.size
@@ -19,7 +19,7 @@ class LinkedList:
     def add(self, value):
         lastNode = self.getNext()
         lastNode.value = value
-        lastNode.next = Node()
+        lastNode.next = self.Node()
         self.size = self.size + 1
         return self.size
 
@@ -50,7 +50,7 @@ class LinkedList:
             currNode = self.head
 
         if None == currNode.next:
-            currNode.next = Node()
+            currNode.next = self.Node()
 
         nextNode = currNode.next
         beforeNode.next = nextNode

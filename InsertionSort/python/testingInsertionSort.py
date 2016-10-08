@@ -1,5 +1,6 @@
 #!/usr/local/bin/python3
 import unittest
+import random
 from InsertionSort import InsertionSort
 
 class TestInsertionSort(unittest.TestCase):
@@ -7,7 +8,7 @@ class TestInsertionSort(unittest.TestCase):
         self.insertionSort = InsertionSort()
 
     def test_init(self):
-        print("Can create self.insertionSort object")
+        print("Can create InsertionSort object")
         self.assertTrue(type(self.insertionSort) is InsertionSort)
 
     def test_oneGivenGetPosition(self):
@@ -59,6 +60,16 @@ class TestInsertionSort(unittest.TestCase):
     def test_sortShortList(self):
         print("When [8682,2602,5961,4659,432,8230,111,3921,2841,5913,4876,800,6748,5720,4660,327,2305,3571,9919,8277,6168,2305,3359,9292,7043] is given, sort returns [111,327,432,800,2305,2305,2602,2841,3359,3571,3921,4659,4660,4876,5720,5913,5961,6168,6748,7043,8230,8277,8682,9292,9919]")
         self.assertEqual([111,327,432,800,2305,2305,2602,2841,3359,3571,3921,4659,4660,4876,5720,5913,5961,6168,6748,7043,8230,8277,8682,9292,9919],self.insertionSort.sort([8682,2602,5961,4659,432,8230,111,3921,2841,5913,4876,800,6748,5720,4660,327,2305,3571,9919,8277,6168,2305,3359,9292,7043]))
+
+    def test_sortHUGEList(self):
+        print("Can sort HUGE list")
+        hugeList = self.generateHugeList(1000)
+        sortedHugeList = self.insertionSort.sort(hugeList)
+        for i,num in enumerate(sortedHugeList[:-1]):
+            self.assertGreater(sortedHugeList[i+1], sortedHugeList[i])
+
+    def generateHugeList(self,length):
+        return random.sample(range(length*10), length)
 
 if __name__ == '__main__':
     unittest.main()

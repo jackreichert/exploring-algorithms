@@ -63,8 +63,9 @@ class TestInsertionSort(unittest.TestCase):
         self.assertEqual([111,327,432,800,2305,2305,2602,2841,3359,3571,3921,4659,4660,4876,5720,5913,5961,6168,6748,7043,8230,8277,8682,9292,9919],self.insertionSort.sort([8682,2602,5961,4659,432,8230,111,3921,2841,5913,4876,800,6748,5720,4660,327,2305,3571,9919,8277,6168,2305,3359,9292,7043]))
 
     def test_12(self):
-        print("{} Can sort HUGE list".format(inspect.stack()[0][3]))
-        hugeList = self.generateHugeList(5000)
+        hugeNumber = 5000
+        print("{} Can sort HUGE list of {}".format(inspect.stack()[0][3],hugeNumber))
+        hugeList = self.generateHugeList(hugeNumber)
         sortedHugeList = self.insertionSort.sort(hugeList)
         for i,num in enumerate(sortedHugeList[:-1]):
             self.assertGreater(sortedHugeList[i+1], sortedHugeList[i])

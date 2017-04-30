@@ -13,6 +13,8 @@ class LinkedList:
         def __str__(self):
             return str(self.value)
 
+        __repr__ = __str__
+
     def isEmpty(self):
         return 0 == self.size
 
@@ -67,3 +69,5 @@ class LinkedList:
             str = "{},{}".format(str,currNode)
             currNode = currNode.next
         return str[1:]
+
+    __repr__ = __str__

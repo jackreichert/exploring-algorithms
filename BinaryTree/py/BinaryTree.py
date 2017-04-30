@@ -2,13 +2,36 @@
 
 class BinaryTree:
     def __init__(self):
-        pass
+        self.root = self.Node()
 
-    def getLeft(self):
-        pass
+    class Node:
+        def __init__(self):
+            self.left = None
+            self.right = None
+            self.value = None
 
-    def getRight(self):
-        pass
+    def insert(self, value, node=None):
+        if node is None:
+            node = self.root
 
-    def getValue(self):
-        pass
+        if node.value is None:
+            node.value = value
+            node.left = self.Node()
+            node.right = self.Node()
+        elif node.value > value:
+            self.insert(value,node.left)
+        elif node.value < value:
+            self.insert(value,node.right)
+
+    def search(self, value, node=None):
+        if node is None:
+            node = self.root
+
+        if node.value == value:
+            return True
+        elif node.left is None and node.right is None:
+            return False
+        elif node.value > value:
+            return self.search(value,node.left)
+        elif node.value < value:
+            return self.search(value,node.right)

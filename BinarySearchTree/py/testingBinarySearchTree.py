@@ -13,7 +13,7 @@ class TestBinaryTree(unittest.TestCase):
         self.binarySearchTree = BinarySearchTree()
 
     def test_0(self):
-        print("{} Can create linked list object".format(inspect.stack()[0][3]))
+        print("{} Can create binary search tree object".format(inspect.stack()[0][3]))
         self.assertTrue(type(self.binarySearchTree) is BinarySearchTree)
 
     def test_1(self):
@@ -49,6 +49,7 @@ class TestBinaryTree(unittest.TestCase):
         self.assertTrue(self.isBST(self.binarySearchTree.root))
 
     # Returns true if the given tree is a binary search tree
+    # Test courtesy of http://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
     def isBST(self, node):
         return (self.isBSTUtil(node, INT_MIN, INT_MAX))
 

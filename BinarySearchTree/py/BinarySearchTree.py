@@ -1,6 +1,6 @@
 #!/usr/local/bin/python3
 
-class BinaryTree:
+class BinarySearchTree:
     def __init__(self):
         self.root = self.Node()
 

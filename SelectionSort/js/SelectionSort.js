@@ -1,27 +1,26 @@
 'use strict';
 
 class SelectionSort {
-  findIndexOfLowest(numberList){
-    var lowest = 0;
-    numberList.forEach((val,i) => {
-      lowest = numberList[lowest] > val ? i : lowest;
-    });
-    return lowest;
-  }
+	findIndexOfLowest(numberList) {
+		var lowest = 0;
+		numberList.forEach((val, i) => {
+            lowest = val < numberList[lowest] ? i : lowest;
+        });
+		return lowest;
+	}
 
-  swap(numberList, from, to) {
-    var temp = numberList[to];
-    numberList[to] = numberList[from];
-    numberList[from] = temp;
-    return numberList;
-  }
+    swapFromTo(numberList, from, to) {
+        let tempFrom = numberList[from];
+        numberList[from] = numberList[to];
+        numberList[to] = tempFrom;
+        return numberList;
+    }
 
-  sort(numberList) {
-    numberList.forEach((val, i) => {
-      var lowest = i + this.findIndexOfLowest(numberList.slice(i));
-      numberList = this.swap(numberList, i , lowest);
-    });
-
-    return numberList;
-  }
+    sort(numberList) {
+        numberList.forEach( (val,i) => {
+            let indexOfLowest = i + this.findIndexOfLowest(numberList.slice(i));
+            numberList = this.swapFromTo(numberList, i, indexOfLowest);
+        });
+        return numberList;
+    }
 }

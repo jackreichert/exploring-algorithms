@@ -72,29 +72,31 @@ QUnit.test(test_2, function(assert) {
 const test_3 = 'When given list of numbers, can find lowest number';
 QUnit.test(test_3, function(assert) {
 	const numberList = [23, 2, 43, -54, 5, 12, 5, 4, 76, 1, 544, -1, 4, -54];
-	assert.ok(3 === this.selectionSort.findIndexOfLowest(numberList), test_3)
+	assert.ok(3 === this.selectionSort.findIndexOfLowest(numberList), test_3);
 });
 
 const test_4 = 'Swapping numbers in small list, where from > to';
-QUnit.test(test_4, function( assert ) {
-    const numberList = [23,2,43,-54,5,12,5,4,76,1,544,-1,4,-54];
-    assert.ok([23,2,43,544,5,12,5,4,76,1,-54,-1,4,-54].equals(this.selectionSort.swapFromTo(numberList, 10, 3)), test_4);
+QUnit.test(test_4, function(assert) {
+	const numberList = [23, 2, 43, -54, 5, 12, 5, 4, 76, 1, 544, -1, 4, -54];
+	assert.ok([23, 2, 43, 544, 5, 12, 5, 4, 76, 1, -54, -1, 4, -54].equals(
+		this.selectionSort.swapFromTo(numberList, 10, 3)), test_4);
 });
 
 const test_5 = 'Swapping numbers in small list, where from < to';
-QUnit.test(test_5, function( assert ) {
-    const numberList = [23,2,43,-54,5,12,5,4,76,1,544,-1,4,-54];
-    assert.ok([23,2,43,-54,1,12,5,4,76,5,544,-1,4,-54].equals(this.selectionSort.swapFromTo(numberList, 4, 9)), test_5);
+QUnit.test(test_5, function(assert) {
+	const numberList = [23, 2, 43, -54, 5, 12, 5, 4, 76, 1, 544, -1, 4, -54];
+	assert.ok([23, 2, 43, -54, 1, 12, 5, 4, 76, 5, 544, -1, 4, -54].equals(
+		this.selectionSort.swapFromTo(numberList, 4, 9)), test_5);
 });
 
 const test_6 = 'Can sort small list';
-QUnit.test(test_6, function( assert ) {
-    const numberList = [23,2,43,-54,5,12,5,4,76,1,544,-1,4,-54];
-    assert.ok(isArrayInOrder(this.selectionSort.sort(numberList)), test_6)
+QUnit.test(test_6, function(assert) {
+	const numberList = [23, 2, 43, -54, 5, 12, 5, 4, 76, 1, 544, -1, 4, -54];
+	assert.ok(isArrayInOrder(this.selectionSort.sort(numberList)), test_6);
 });
 
 const test_7 = 'Can sort large list';
-QUnit.test(test_7, function( assert ) {
-    const numberList = generateHugeList(5000);
-    assert.ok(isArrayInOrder(this.selectionSort.sort(numberList)), test_7)
+QUnit.test(test_7, function(assert) {
+	const numberList = generateHugeList(5000);
+	assert.ok(isArrayInOrder(this.selectionSort.sort(numberList)), test_7);
 });

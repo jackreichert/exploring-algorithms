@@ -1,23 +1,24 @@
 #!/usr/local/bin/python3
 
 class SelectionSort:
-    def __init__(self):
+    def  __init__(self):
         pass
 
-    def findLowest(self,numberList):
+    def findIndexOfLowestInList(self, numberList):
         lowest = 0
+
         for i,num in enumerate(numberList):
             if num < numberList[lowest]:
                 lowest = i
         return lowest
 
-    def swap(self,numberList,fromPos,toPos):
-        tmpNum = numberList[fromPos]
+    def swapFromTo(self,numberList,fromPos,toPos):
+        tempNum = numberList[fromPos]
         numberList[fromPos] = numberList[toPos]
-        numberList[toPos] = tmpNum
+        numberList[toPos] = tempNum
         return numberList
 
     def sort(self,numberList):
-        for i,x in enumerate(numberList):
-            numberList = self.swap(numberList,i,i+self.findLowest(numberList[i:]))
+        for i,num in enumerate(numberList):
+            numberList = self.swapFromTo(numberList, i, i+self.findIndexOfLowestInList(numberList[i:]))
         return numberList

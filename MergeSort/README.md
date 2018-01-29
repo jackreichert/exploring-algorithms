@@ -1,5 +1,7 @@
 # Merge Sort
 
+[Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
+
 0. Can create MergeSort object
 1. When [1] is given, sort returns [1]
 2. When [2, 1] is given, sort returns [1, 2]
